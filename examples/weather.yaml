@@ -1,0 +1,12 @@
+# Paste at the TOP of a dashboard's raw configuration (✏️ → ⋮ → Raw configuration editor)
+animated_background:
+  entity: weather.home
+  default_url: /local/backgrounds/clouds.mp4
+  state_url:
+    sunny: /local/backgrounds/sunny.mp4
+    clear-night: /local/backgrounds/stars.mp4
+    rainy: [/local/backgrounds/rain1.mp4, /local/backgrounds/rain2.webm]
+    pouring: /local/backgrounds/storm.mp4
+    snowy: /local/backgrounds/snow.mp4
+    lightning-rainy: /local/backgrounds/storm.mp4
+  background: "rgba(0,0,0,0.25)"   # darken a bit so cards stay readable

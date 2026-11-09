@@ -1,0 +1,22 @@
+name: Release
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Stamp version from tag
+        run: |
+          v="${GITHUB_REF_NAME#v}"
+          sed -i "s/const AB_VERSION = \".*\"/const AB_VERSION = \"$v\"/" dist/animated-background.js
+      - name: Attach JS to release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release upload "$GITHUB_REF_NAME" dist/animated-background.js --clobber

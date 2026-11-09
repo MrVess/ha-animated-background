@@ -1,0 +1,7 @@
+# themes.yaml (frontend: themes: !include_dir_merge_named themes) — see-through cards
+Animated Glass:
+  ha-card-background: rgba(20, 20, 20, 0.35)
+  ha-card-border-color: rgba(255, 255, 255, 0.12)
+  primary-text-color: "#ffffff"
+  secondary-text-color: "#d0d0d0"
+  app-header-background-color: rgba(0, 0, 0, 0.35)

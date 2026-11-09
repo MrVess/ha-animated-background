@@ -1,0 +1,22 @@
+animated_background:
+  default_url: /local/backgrounds/default.webm
+  excluded_devices: [iPhone]          # matched against the browser user agent
+  excluded_users: [guest]
+  views:
+    - path: energy
+      config: { enabled: false }      # plain theme background on this view
+  groups:
+    - name: garden
+      config:
+        entity: sun.sun
+        state_url:
+          above_horizon: /local/backgrounds/garden-day.mp4
+          below_horizon: /local/backgrounds/garden-night.mp4
+views:
+  - title: Garden
+    path: garden
+    animated_background: garden       # use the "garden" group on this view
+    cards: []
+  - title: Energy
+    path: energy
+    cards: []
