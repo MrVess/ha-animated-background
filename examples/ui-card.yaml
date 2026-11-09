@@ -1,0 +1,20 @@
+# What the Animated Background card looks like in YAML (the card editor writes this for you).
+# Add it to any view; it is hidden unless you're editing the dashboard.
+type: custom:animated-background-card
+apply_to: dashboard            # or: view (only the view this card is on)
+media:                         # picked in the editor from Media → My media (several = random)
+  - media_content_id: media-source://media_source/local/backgrounds/clouds.mp4
+    media_content_type: video/mp4
+url:                           # optional plain links
+  - /local/backgrounds/clouds2.webm
+entity: weather.home
+states:
+  - state: rainy
+    media:
+      media_content_id: media-source://media_source/local/backgrounds/rain.mp4
+      media_content_type: video/mp4
+  - state: sunny
+    url: /local/backgrounds/sunny.mp4
+  - state: clear-night         # no media = normal theme background
+tint_color: [0, 0, 0]
+tint_opacity: 25
